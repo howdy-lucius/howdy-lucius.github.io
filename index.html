@@ -50,6 +50,10 @@
       padding-left: 1rem;
       overflow: scroll;
       height: 100vh;
+      display: flex;
+      flex-direciton: column;
+      width: 100%;
+      align-items: center;
     }
     .feed::-webkit-scrollbar {
         display: none;
@@ -59,7 +63,8 @@
 
     .feed img {
       width: 100%;
-      padding-top: 25px;
+      max-width: 1000px;
+      padding-top: 1rem;
     }
 
     .email {
