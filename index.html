@@ -105,8 +105,16 @@
       box-sizing: border-box;
     }
 
+    .imgcontainer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      box-sizing: border-box;
+    }
+
     #overlayimg {
-      max-height: 80vh;
+      max-height: 70vh; /* Adjust so there's room for text */
       max-width: 100%;
       height: auto;
       width: auto;
@@ -114,15 +122,10 @@
       margin-bottom: 1rem;
     }
 
-    .imgcontainer {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
     .infobox {
       width: 100%;
+      max-width: 90%;
+      margin: 0 auto;
       text-align: center;
       word-wrap: break-word;
       padding: 1rem;
@@ -131,12 +134,12 @@
 
     .infobox > p {
       line-height: 1.4;
-      font-size: clamp(1rem, 4vw, 30px);
+      font-size: clamp(1rem, 1.5vw, 30px);
       margin: 0.5rem 0;
     }
 
     #material, #size {
-      font-size: clamp(0.875rem, 3vw, 24px);
+      font-size: clamp(0.875rem, 1vw, 24px);
     }
 
     #size {
@@ -198,7 +201,7 @@
 
   <main class="feed" id="feed" data-imageview="false">
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/pexIEKD.jpg" data-title="Ice Treem" data-material="oil on panel" alt="Ice Treem — oil on panel" data-size='36x48"'/>
+      <img src="https://i.imgur.com/pexIEKD.jpg" data-title="Icetreem" data-material="oil on panel" alt="Ice Treem — oil on panel" data-size='36x48"'/>
     </div>
     <div class="image-wrapper">
       <img src="https://i.imgur.com/ciqLMcb.jpeg" data-title="Butterfingers" data-material="oil on panel" alt="Butterfingers" data-size='13x18 1/2"'/>
@@ -210,7 +213,7 @@
       <img src="https://i.imgur.com/tOYKdFK.jpeg" data-title="Madonna of the Pee Dee" data-material="oil on panel" alt="Madonna of the Pee Dee" data-size='35x44"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/SvrMJVh.jpg" data-title="Floaty Man" data-material="oil on panel" alt="Floaty Man — oil on panel" data-size='48x48"'/>
+      <img src="https://i.imgur.com/SvrMJVh.jpg" data-title="Floaty Man in the Bardo" data-material="oil on panel" alt="Floaty Man — oil on panel" data-size='48x48"'/>
     </div>
     <div class="image-wrapper">
       <img src="https://i.imgur.com/GUxH3ph.jpg" data-title="Nachosummer" data-material="oil on canvas" alt="Nachosummer — oil on canvas" data-size='36x48"'/>
