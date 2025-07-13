@@ -18,6 +18,7 @@
       margin: 0;
       font-family: 'Inconsolata', monospace;
     }
+
     header#namecol {
       position: fixed;
       top: 0;
@@ -33,21 +34,30 @@
       flex-wrap: wrap;
       gap: 0.5rem;
     }
+
     header#namecol h1 {
       font-size: 2rem;
       font-family: 'Bebas Neue', cursive;
       margin: 0;
     }
+
     .name-links {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      font-size: 16pt;
+      font-size: 1rem;
     }
+
     .name-links a {
       color: black;
       text-decoration: none;
+      display: inline-block;
     }
+
+    .name-links a:hover {
+      color: #038de1;
+    }
+
     main.feed {
       overflow-y: scroll;
       height: 100vh;
@@ -56,16 +66,19 @@
       padding-bottom: 40px;
       box-sizing: border-box;
     }
+
     main.feed::-webkit-scrollbar {
       display: none;
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
     .image-wrapper {
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
     }
+
     .image-wrapper img {
       max-height: 90vh;
       height: auto;
@@ -73,48 +86,91 @@
       max-width: 100%;
       object-fit: contain;
     }
+
     .showoverlay {
-      display: block !important;
-      background-color: white;
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.95);
     }
+
     #overlay {
       display: none;
       position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      inset: 0;
       padding: 20px;
-      background-color: rgba(255, 255, 255, 0.9);
       z-index: 10;
+      overflow-y: auto;
+      box-sizing: border-box;
     }
+
     #overlayimg {
-      max-height: 95vh;
+      max-height: 80vh;
       max-width: 100%;
+      height: auto;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 1rem;
     }
+
     .imgcontainer {
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     .infobox {
       width: 100%;
       text-align: center;
+      word-wrap: break-word;
+      padding: 1rem;
+      box-sizing: border-box;
     }
+
     .infobox > p {
-      display: block;
-      line-height: 14px;
-      font-size: 30px;
+      line-height: 1.4;
+      font-size: clamp(1rem, 4vw, 30px);
+      margin: 0.5rem 0;
     }
+
     #material, #size {
-      font-size: 24px;
+      font-size: clamp(0.875rem, 3vw, 24px);
     }
+
     #size {
       margin-left: 5px;
     }
+
     .materialsize > p {
       display: inline-block;
+    }
+
+    @media (max-width: 480px) {
+      header#namecol h1 {
+        font-size: 1.5rem;
+      }
+
+      .name-links {
+        font-size: 14pt;
+      }
+
+      #overlayimg {
+        max-height: 60vh;
+      }
+
+      .infobox > p {
+        font-size: 18px;
+      }
+
+      #material, #size {
+        font-size: 16px;
+      }
+    }
+
+    h1 {
+      letter-spacing: .75rem;
     }
   </style>
 </head>
@@ -142,136 +198,136 @@
 
   <main class="feed" id="feed" data-imageview="false">
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/pexIEKD.jpg" data-title="Ice Treem" data-material="oil on panel" alt="Ice Treem — oil on panel" />
+      <img src="https://i.imgur.com/pexIEKD.jpg" data-title="Ice Treem" data-material="oil on panel" alt="Ice Treem — oil on panel" data-size='36x48"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/ciqLMcb.jpeg" data-title="Butterfingers" data-material="oil on panel" alt="Butterfingers" />
+      <img src="https://i.imgur.com/ciqLMcb.jpeg" data-title="Butterfingers" data-material="oil on panel" alt="Butterfingers" data-size='13x18 1/2"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/wHuYQSY.jpg" data-title="Marsh painting" data-material="oil on panel" alt="Marsh painting — oil on panel" />
+      <img src="https://i.imgur.com/wHuYQSY.jpg" data-title="Marsh painting" data-material="oil on panel" alt="Marsh painting — oil on panel" data-size='48x36"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/tOYKdFK.jpeg" data-title="Madonna of the Pee Dee" data-material="oil on panel" alt="Madonna of the Pee Dee" />
+      <img src="https://i.imgur.com/tOYKdFK.jpeg" data-title="Madonna of the Pee Dee" data-material="oil on panel" alt="Madonna of the Pee Dee" data-size='35x44"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/SvrMJVh.jpg" data-title="Floaty Man" data-material="oil on panel" alt="Floaty Man — oil on panel" />
+      <img src="https://i.imgur.com/SvrMJVh.jpg" data-title="Floaty Man" data-material="oil on panel" alt="Floaty Man — oil on panel" data-size='48x48"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/GUxH3ph.jpg" data-title="Nachosummer" data-material="oil on canvas" alt="Nachosummer — oil on canvas" />
+      <img src="https://i.imgur.com/GUxH3ph.jpg" data-title="Nachosummer" data-material="oil on canvas" alt="Nachosummer — oil on canvas" data-size='36x48"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/vrSX2k3.jpeg" data-title="Jones Gap State Park" data-material="oil on paper" alt="Jones Gap State Park" />
+      <img src="https://i.imgur.com/vrSX2k3.jpeg" data-title="Jones Gap State Park" data-material="oil on paper" alt="Jones Gap State Park" data-size='11x14"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/3i6RlVL.jpg" data-title="One More for the Road" data-material="oil on panel" alt="One More for the Road — oil on panel" />
+      <img src="https://i.imgur.com/3i6RlVL.jpg" data-title="One More for the Road" data-material="oil on panel" alt="One More for the Road — oil on panel" data-size='36x48"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/9A4aKXo.jpg" data-title="Pumphouse" data-material="oil on paper" alt="Pumphouse — oil on paper" />
+      <img src="https://i.imgur.com/9A4aKXo.jpg" data-title="Pumphouse" data-material="oil on paper" alt="Pumphouse — oil on paper" data-size='14x11"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/WTa59Nv.jpg" data-title="Proposal" data-material="oil on canvas" alt="Proposal — oil on canvas" />
+      <img src="https://i.imgur.com/WTa59Nv.jpg" data-title="Proposal" data-material="oil on canvas" alt="Proposal — oil on canvas" data-size='20x20"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/flZCU0O.jpeg" data-title="Hunting Island State Park" data-material="oil on paper" alt="Hunting Island State Park" />
+      <img src="https://i.imgur.com/flZCU0O.jpeg" data-title="Hunting Island State Park" data-material="oil on paper" alt="Hunting Island State Park" data-size='11x14"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/fr3g3A3.jpg" data-title="Londons" data-material="oil on canvas" alt="Londons — oil on canvas" />
+      <img src="https://i.imgur.com/fr3g3A3.jpg" data-title="Londons" data-material="oil on canvas" alt="Londons — oil on canvas" data-size='16x20"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/befin6d.jpg" data-title="Hand of Pop Pop" data-material="oil on canvas" alt="Hand of Pop Pop — oil on canvas" />
+      <img src="https://i.imgur.com/befin6d.jpg" data-title="Hand of Pop Pop" data-material="oil on canvas" alt="Hand of Pop Pop — oil on canvas" data-size='40x40"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/BKKBPb9.jpg" data-title="Big Daddy's Pocket Knife Collection" data-material="oil on canvas" alt="Big Daddy's Pocket Knife Collection — oil on canvas" />
+      <img src="https://i.imgur.com/BKKBPb9.jpg" data-title="Big Daddy's Pocket Knife Collection" data-material="oil on canvas" alt="Big Daddy's Pocket Knife Collection — oil on canvas" data-size='36x48"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/BPikWn0.jpg" data-title="Jackie" data-material="oil on canvas" alt="Jackie — oil on canvas" />
+      <img src="https://i.imgur.com/BPikWn0.jpg" data-title="Jackie" data-material="oil on canvas" alt="Jackie — oil on canvas" data-size='16x20"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/6HIsYiE.jpg" data-title="Lillies on Fishburne" data-material="pastel and ink on paper" alt="Lillies on Fishburne — pastel and ink on paper" />
+      <img src="https://i.imgur.com/6HIsYiE.jpg" data-title="Lillies on Fishburne" data-material="pastel and ink on paper" alt="Lillies on Fishburne — pastel and ink on paper" data-size='14x11"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/qXJdAuP.jpg" data-title="Old Roses" data-material="pastel and ink on paper" alt="Old Roses — pastel and ink on paper" />
+      <img src="https://i.imgur.com/qXJdAuP.jpg" data-title="Old Roses" data-material="pastel and ink on paper" alt="Old Roses — pastel and ink on paper" data-size='11x14"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/4kUWFse.jpg" data-title="Hampton" data-material="pastel and ink on paper" alt="Hampton — pastel and ink on paper" />
+      <img src="https://i.imgur.com/4kUWFse.jpg" data-title="Hampton" data-material="pastel and ink on paper" alt="Hampton — pastel and ink on paper" data-size='11x14"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/hgKlISm.jpg" data-title="Freddie" data-material="oil on canvas" alt="Freddie — oil on canvas" />
+      <img src="https://i.imgur.com/hgKlISm.jpg" data-title="Freddie" data-material="oil on canvas" alt="Freddie — oil on canvas" data-size='24x16"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/SSBsDjv.jpg" data-title="Daytripper" data-material="oil on canvas" alt="Daytripper — oil on canvas" />
+      <img src="https://i.imgur.com/SSBsDjv.jpg" data-title="Daytripper" data-material="oil on canvas" alt="Daytripper — oil on canvas" data-size='14x11"'/>
     </div>
     <div class="image-wrapper">
       <img src="https://i.imgur.com/rkbotdC.jpg" data-title="Niagara River Bloom" data-material="oil on paper" alt="Niagara River Bloom — oil on paper" />
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/STSHvNb.jpg" data-title="Hampton Flowers" data-material="oil on paper" alt="Hampton Flowers — oil on paper" />
+      <img src="https://i.imgur.com/STSHvNb.jpg" data-title="Hampton Flowers" data-material="oil on paper" alt="Hampton Flowers — oil on paper" data-size='14x11"'/>
     </div>
     <div class="image-wrapper">
       <img src="https://i.imgur.com/h2yXNFX.jpg" data-title="Avo" data-material="oil on paper" alt="Avo — oil on paper" />
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/tiSwxba.jpg" data-title="Hampton Beds" data-material="oil on paper" alt="Hampton Beds — oil on paper" />
+      <img src="https://i.imgur.com/tiSwxba.jpg" data-title="Hampton Beds" data-material="oil on paper" alt="Hampton Beds — oil on paper" data-size='11x14"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/0R3r1yj.jpg" data-title="Rockies" data-material="oil on paper" alt="Rockies — oil on paper" />
+      <img src="https://i.imgur.com/0R3r1yj.jpg" data-title="Rockies" data-material="oil on paper" alt="Rockies — oil on paper" data-size='16x20"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/LOmqIJX.jpg" data-title="Penny Moon Path" data-material="oil on paper" alt="Penny Moon Path — oil on paper" />
+      <img src="https://i.imgur.com/LOmqIJX.jpg" data-title="Penny Moon Path" data-material="oil on paper" alt="Penny Moon Path — oil on paper" data-size='11x14"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/fHh3eqn.jpg" data-title="Underbridge" data-material="pastel and ink on paper" alt="Underbridge — pastel and ink on paper" />
+      <img src="https://i.imgur.com/fHh3eqn.jpg" data-title="Underbridge" data-material="pastel and ink on paper" alt="Underbridge — pastel and ink on paper" data-size='14x11"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/BxLnbwm.jpg" data-title="Knoxville" data-material="pastel and ink on paper" alt="Knoxville — pastel and ink on paper" />
+      <img src="https://i.imgur.com/BxLnbwm.jpg" data-title="Knoxville" data-material="pastel and ink on paper" alt="Knoxville — pastel and ink on paper" data-size='14x11"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/VUUM0WO.jpg" data-title="Hampton Flowers 2" data-material="pastel and ink on paper" alt="Hampton Flowers 2 — pastel and ink on paper" />
+      <img src="https://i.imgur.com/VUUM0WO.jpg" data-title="Hampton Flowers 2" data-material="pastel and ink on paper" alt="Hampton Flowers 2 — pastel and ink on paper"  data-size='11x14"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/RUV75qm.jpg" data-title="Ella" data-material="charcoal on paper" alt="Ella — charcoal on paper" />
+      <img src="https://i.imgur.com/RUV75qm.jpg" data-title="Ella" data-material="charcoal on paper" alt="Ella — charcoal on paper"  data-size='11x14"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/vJv2OyA.jpg" data-title="Kendrick" data-material="charcoal on paper" alt="Kendrick — charcoal on paper" />
+      <img src="https://i.imgur.com/vJv2OyA.jpg" data-title="Kendrick" data-material="charcoal on paper" alt="Kendrick — charcoal on paper"  data-size='11x14"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/4UEObY8.jpg" data-title="Being 22" data-material="oil on canvas" alt="Being 22 — oil on canvas" />
+      <img src="https://i.imgur.com/4UEObY8.jpg" data-title="Being 22" data-material="oil on canvas" alt="Being 22 — oil on canvas"  data-size='30x30"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/XsRlMhf.jpg" data-title="Carlton" data-material="pastel and ink on paper" alt="Carlton — pastel and ink on paper" />
+      <img src="https://i.imgur.com/XsRlMhf.jpg" data-title="Carlton" data-material="pastel and ink on paper" alt="Carlton — pastel and ink on paper" data-size='24x24"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/yYd4yK9.jpg" data-title="Red on Ashley" data-material="pastel and ink on paper" alt="Red on Ashley — pastel and ink on paper" />
+      <img src="https://i.imgur.com/yYd4yK9.jpg" data-title="Red on Ashley" data-material="pastel and ink on paper" alt="Red on Ashley — pastel and ink on paper" data-size='14x11"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/5Ccnqga.jpg" data-title="Golden Hour Bus Flowers" data-material="pastel and ink on paper" alt="Golden Hour Bus Flowers — pastel and ink on paper" />
+      <img src="https://i.imgur.com/5Ccnqga.jpg" data-title="Golden Hour Bus Flowers" data-material="pastel and ink on paper" alt="Golden Hour Bus Flowers — pastel and ink on paper" data-size='14x11"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/nZL2QHF.jpg" data-title="Crusty House" data-material="oil on canvas" alt="Crusty House — oil on canvas" />
+      <img src="https://i.imgur.com/nZL2QHF.jpg" data-title="Crusty House" data-material="oil on canvas" alt="Crusty House — oil on canvas" data-size='16x20"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/3vXQNO6.jpg" data-title="Vanderhorst" data-material="oil on canvas" alt="Vanderhorst — oil on canvas" />
+      <img src="https://i.imgur.com/3vXQNO6.jpg" data-title="Vanderhorst" data-material="oil on canvas" alt="Vanderhorst — oil on canvas" data-size='16x20"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/m5cFHfs.jpg" data-title="Cranes" data-material="oil on canvas" alt="Cranes — oil on canvas" />
+      <img src="https://i.imgur.com/m5cFHfs.jpg" data-title="Cranes" data-material="oil on canvas" alt="Cranes — oil on canvas" data-size='11x14"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/qq9NviJ.jpg" data-title="Melty" data-material="oil on panel" alt="Melty — oil on panel" />
+      <img src="https://i.imgur.com/qq9NviJ.jpg" data-title="Melty" data-material="oil on panel" alt="Melty — oil on panel" data-size='24x36"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/mdHdMQq.jpg" data-title="Billie" data-material="charcoal on paper" alt="Billie — charcoal on paper" />
+      <img src="https://i.imgur.com/mdHdMQq.jpg" data-title="Billie" data-material="charcoal on paper" alt="Billie — charcoal on paper" data-size='11x14"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/CX4QPEI.jpg" data-title="Hampton Park Haze" data-material="pastel and ink on paper" alt="Hampton Park Haze — pastel and ink on paper" />
+      <img src="https://i.imgur.com/CX4QPEI.jpg" data-title="Hampton Park Haze" data-material="pastel and ink on paper" alt="Hampton Park Haze — pastel and ink on paper" data-size='11x14"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/GKEsABW.jpg" data-title="Storm on the Niagara" data-material="oil on paper" alt="Storm on the Niagara — oil on paper" />
+      <img src="https://i.imgur.com/GKEsABW.jpg" data-title="Storm on the Niagara" data-material="oil on paper" alt="Storm on the Niagara — oil on paper" data-size='11x14"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/AJaYNFc.jpg" data-title="Niagara Water Sunset" data-material="oil on paper" alt="Niagara Water Sunset — oil on paper" />
+      <img src="https://i.imgur.com/AJaYNFc.jpg" data-title="Niagara Water Sunset" data-material="oil on paper" alt="Niagara Water Sunset — oil on paper" data-size='11x14"'/>
     </div>
     <div class="image-wrapper">
-      <img src="https://i.imgur.com/YofBBES.jpg" data-title="Warren Wolf Yawning" data-material="oil on canvas" alt="Warren Wolf Yawning — oil on canvas" />
+      <img src="https://i.imgur.com/YofBBES.jpg" data-title="Warren Wolf Yawning" data-material="oil on canvas" alt="Warren Wolf Yawning — oil on canvas" data-size='20x20"'/>
     </div>
   </main>
 
